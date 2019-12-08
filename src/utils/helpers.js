@@ -10,7 +10,6 @@ export function copyCodeToClipboard (id) {
 }
 
 export function copyTextToClipboard(text) {
-  console.log('4e za naxuy?')
   if (!navigator.clipboard) {
     console.log('unsuccessful')
   }

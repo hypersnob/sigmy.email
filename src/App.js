@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import './scss/style.scss';
+import React, {useState, useEffect, useRef} from 'react'
+import './scss/style.scss'
 import Controls from './components/controls'
 import Preview from './components/preview'
-import SourceModal from './components/source-modal'
 
-const storageKey = 'savedData';
+const storageKey = 'savedData'
+const addHandler = handler => window.addEventListener('beforeunload', handler)
+const removeHandler = handler => window.removeEventListener('beforeunload', handler)
 
 function getStateFromStorage(key) {
   try {
@@ -17,6 +18,7 @@ function getStateFromStorage(key) {
 }
 
 function saveStateToStorage(data, key) {
+  if (Object.entries(data).length === 0) return;
   try {
     window.localStorage.setItem(
       key,
@@ -41,18 +43,31 @@ function App() {
       [name]: value
     });
   }
+
+  function resetData() {
+    setData({})
+    window.localStorage.clear()
+  }
+  
+  const prevHandler = useRef(null)
   
   useEffect(() => {
-    window.addEventListener('pagehide', () => {saveStateToStorage(data, storageKey)});
+    const handler = () => saveStateToStorage(data, storageKey)
+    if(prevHandler.current) removeHandler(prevHandler.current)
+    prevHandler.current = handler
+    addHandler(handler)
   }, [data]);
 
   return (
     <>
       <div className='wrapper d-md-flex'>
-        <Controls handleInputChange={handleInputChange} data={data} />
         <Preview data={data} />
+        <Controls
+          handleInputChange={handleInputChange}
+          data={data}
+          reset={resetData}
+        />
       </div>
-      <SourceModal buttonLabel='modal' data={data} />
     </>
   );
 }
