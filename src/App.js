@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import './scss/style.scss'
 import Controls from './components/controls'
+import Header from './components/header'
 import Preview from './components/preview'
 
 const storageKey = 'savedData'
@@ -61,7 +62,10 @@ function App() {
   return (
     <>
       <div className='wrapper d-md-flex'>
-        <Preview data={data} />
+        <div className='flex-grow-1'>
+          <Header />
+          <Preview data={data} />
+        </div>
         <Controls
           handleInputChange={handleInputChange}
           data={data}

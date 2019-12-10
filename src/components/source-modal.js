@@ -18,7 +18,7 @@ const SourceModal = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
+    <>
       <Button color='primary' onClick={toggle} disabled={isActive(data)} >{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
@@ -32,7 +32,7 @@ const SourceModal = (props) => {
           <Button color='primary' onClick={() => copyTextToClipboard(getSource(data))}>Copy</Button>{' '}
         </ModalFooter>
       </Modal>
-    </div>
+    </>
   );
 }
 

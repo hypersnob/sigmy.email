@@ -6,3 +6,45 @@
 .stage {
   max-width: 42rem;
 }
+
+.dummy {
+  *+* {
+    margin-top: .75rem;
+  }
+  .line{
+    height: .75rem;
+    background-color: $light;
+  }
+}
+
+.form{
+  &-wrapper {
+    label{
+      color: $gray-200;
+    }
+    .form-control {
+      background: none;
+      color: $light;
+      border-color: $gray-700;
+      &:focus {
+        color: $white;
+        border-color: $light;
+      }
+      &-internal-autofill-selected {
+        background-color: inherit !important;
+      }
+    }
+  }
+  &-tabs {
+    background-color: $black;
+    .nav-item:not(:first-child) {
+      margin-left: 1px;
+    }
+    .nav-link {
+      background-color: $gray-800;
+      &:not(.active){
+        cursor: pointer;
+      }
+    }
+  }
+}
