@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, FormGroup, Label, Input } from 'reactstrap'
 import {getValue} from '../../utils/helpers'
 
-export function GeneralForm({handleInputChange, data}) {
+export function GeneralForm({handleInputChange, signature}) {
   const fields = [
     {
       label: 'Full name',
@@ -57,7 +57,7 @@ export function GeneralForm({handleInputChange, data}) {
               type='text'
               name={name}
               onChange={handleInputChange}
-              value={getValue(data[name])}
+              value={getValue(signature[name])}
               placeholder={placeholder}
             />
           </FormGroup>

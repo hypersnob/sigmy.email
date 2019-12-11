@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, FormGroup, Label, Input } from 'reactstrap'
 import {getValue} from '../../utils/helpers'
 
-export function SocialForm({handleInputChange, data}) {
+export function SocialForm({handleInputChange, signature}) {
   const fields = [
     {
       label: 'LinkedIn',
@@ -37,7 +37,7 @@ export function SocialForm({handleInputChange, data}) {
               type='text'
               name={name}
               onChange={handleInputChange}
-              value={getValue(data[name])}
+              value={getValue(signature[name])}
               placeholder={placeholder}
             />
           </FormGroup>

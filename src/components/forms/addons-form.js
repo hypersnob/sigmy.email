@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, FormGroup, Label, Input } from 'reactstrap'
 import {getValue} from '../../utils/helpers'
 
-export function AddonsForm({handleInputChange, data}) {
+export function AddonsForm({handleInputChange, signature}) {
   const fields = [
     {
       label: 'Company Logo',
@@ -22,7 +22,7 @@ export function AddonsForm({handleInputChange, data}) {
               type='text'
               name={name}
               onChange={handleInputChange}
-              value={getValue(data[name])}
+              value={getValue(signature[name])}
               placeholder={placeholder}
             />
           </FormGroup>
