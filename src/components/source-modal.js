@@ -21,7 +21,7 @@ const SourceModal = (props) => {
 
   return (
     <>
-      <Button color='primary' onClick={toggle} disabled={isActive(signature)} >{buttonLabel}</Button>
+      <button className='main-cta' onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
         <ModalBody>

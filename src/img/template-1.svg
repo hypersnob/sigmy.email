@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="224px" viewBox="0 0 360 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>template-1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sigmy.email" transform="translate(-1024.000000, -208.000000)">
+            <g id="Templates" transform="translate(1024.000000, 108.000000)">
+                <g id="template-1" transform="translate(0.000000, 100.000000)">
+                    <rect id="Rectangle" fill="#464644" x="0" y="0" width="360" height="224" rx="4"></rect>
+                    <rect id="Rectangle-Copy-16" fill="#313130" x="128" y="32" width="160" height="16"></rect>
+                    <rect id="Rectangle-Copy-17" fill="#313130" x="128" y="72" width="200" height="16"></rect>
+                    <rect id="Rectangle-Copy-19" fill="#313130" x="128" y="104" width="200" height="16"></rect>
+                    <rect id="Rectangle-Copy-20" fill="#313130" x="128" y="136" width="200" height="16"></rect>
+                    <rect id="Rectangle-Copy-21" fill="#313130" x="128" y="168" width="200" height="16"></rect>
+                    <circle id="Oval-Copy" fill="#313130" cx="72" cy="72" r="40"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

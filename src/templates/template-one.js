@@ -27,15 +27,15 @@ export const templateOne = (signature) => (
                           <td valign="top" style="font-size: 0px;">
                             <p
                               style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                              <span style="color: rgb(64, 158, 255);">${signature.name}</span></p>
+                              <span style="color: rgb(64, 158, 255);">${signature.name || ''}</span></p>
                           </td>
                         </tr>
                         <tr>
                           <td valign="top" style="font-size: 0px; padding-bottom: 5px;">
                             <p
                               style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%;">
-                              <span><span>${signature.job}</span></span><span><span
-                                  style="padding: 0px;">&nbsp;&nbsp;/&nbsp;&nbsp;</span><span>${signature.company}</span></span>
+                              <span><span>${signature.job || ''}</span></span><span><span
+                                  style="padding: 0px;">&nbsp;&nbsp;/&nbsp;&nbsp;</span><span>${signature.company || ''}</span></span>
                             </p>
                           </td>
                         </tr>

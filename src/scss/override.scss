@@ -14,7 +14,7 @@ $gray-500: #989898;
 $gray-600: #838383;
 $gray-700: #6f6f6e;
 $gray-800: #5a5a59;
-$gray-900: #464645;
+$gray-900: #3f3f3d;
 $black:    #313130;
 
 $grays: ();
@@ -67,7 +67,7 @@ $colors: map-merge(
 );
 
 $primary:       #C58720;
-$secondary:     $gray-600;
+$secondary:     $black;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
@@ -144,11 +144,11 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3),
-    6: ($spacer * 3.5),
-    7: ($spacer * 4),
-    8: ($spacer * 5),
-    9: ($spacer * 6),
+    5: ($spacer * 2),
+    6: ($spacer * 2.5),
+    7: ($spacer * 3),
+    8: ($spacer * 4),
+    9: ($spacer * 5),
   ),
   $spacers
 );
@@ -230,7 +230,7 @@ $body-bg:                   $light;
 // // Set the number of columns and specify the width of the gutters.
 
 // $grid-columns:                12;
-// $grid-gutter-width:           30px;
+$grid-gutter-width:           24px;
 // $grid-row-columns:            6;
 
 

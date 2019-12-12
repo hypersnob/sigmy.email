@@ -31,7 +31,7 @@ function App() {
   }
 
   function chooseTemplate(event) {
-    const template = event.target.closest('.tmb').id;
+    const template = event.target.closest('.template-tmb').id;
     if (state.template === template) return;
     setState({
       ...state,
