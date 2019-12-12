@@ -5,8 +5,8 @@ import { GeneralForm } from './forms/general-form'
 import { TemplateForm } from './forms/template-form'
 import { SocialForm } from './forms/social-form'
 import cn from 'classnames'
-import ListIcon from '../icons/js/List'
-import PencilIcon from '../icons/js/Pencil'
+import TemplateIcon from '../icons/js/Template'
+import EditIcon from '../icons/js/Edit'
 import ShareIcon from '../icons/js/Share'
 
 export default function Controls({template, signature, handleInputChange, chooseTemplate, reset}) {
@@ -25,7 +25,7 @@ export default function Controls({template, signature, handleInputChange, choose
             className={cn({ active: activeTab === 'template' })}
             onClick={() => { toggle('template'); }}
           >
-            <ListIcon />
+            <TemplateIcon />
           </NavLink>
         </NavItem>
         <NavItem>
@@ -33,7 +33,7 @@ export default function Controls({template, signature, handleInputChange, choose
             className={cn({ active: activeTab === 'general' })}
             onClick={() => { toggle('general'); }}
           >
-            <PencilIcon />
+            <EditIcon />
           </NavLink>
         </NavItem>
         <NavItem>

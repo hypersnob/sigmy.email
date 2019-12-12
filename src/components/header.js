@@ -1,11 +1,11 @@
 import React from 'react'
-import ArrobaIcon from '../icons/js/Arroba'
+import Logo from '../icons/js/Logo'
 
 export default function Header() {
   return (
     <header className='page-header text-light d-flex'>
-      <div className="border-right border-dark p-4">
-        <ArrobaIcon />
+      <div className="brand border-right border-dark p-4">
+        <Logo />
       </div>
       <div className='d-flex justify-content-between flex-grow-1 align-items-center px-4 text-muted'>
         <span className=''>Email signature generator</span>

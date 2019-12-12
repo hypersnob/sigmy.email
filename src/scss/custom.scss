@@ -17,6 +17,10 @@ main, aside{ flex-direction: column;}
   max-width: 42rem;
 }
 
+.brand {
+  font-size: 1.5rem;
+}
+
 .dummy {
   *+* {
     margin-top: .5rem;
@@ -56,11 +60,6 @@ main, aside{ flex-direction: column;}
         color: $white;
         border-color: $light;
       }
-      &:-webkit-autofill {
-        -webkit-text-fill-color: $white !important;
-        -webkit-box-shadow: 0 0 0 30px $dark inset !important;
-        box-shadow: none;
-      }
     }
   }
   &-tabs {
@@ -69,6 +68,12 @@ main, aside{ flex-direction: column;}
       border-left: 1px solid $dark;
       &:not(.active){
         cursor: pointer;
+      }
+      .nav-link {
+        font-size: 1.5rem;
+        &:hover {
+          background-color: $dark;
+        }
       }
     }
   }
@@ -90,4 +95,14 @@ main, aside{ flex-direction: column;}
       border-radius: 2px;
     }
   }
+}
+
+input.form-control:-webkit-autofill,
+input.form-control:-webkit-autofill:hover, 
+input.form-control:-webkit-autofill:focus,
+input.form-control:-internal-autofill-selected {
+  -webkit-text-fill-color: $white !important;
+  -webkit-box-shadow: 0 0 0px 100px $dark inset !important;
+  box-shadow: 0 0 0px 1000px $dark inset;
+  transition: background-color 5000s ease-in-out 0s !important;
 }

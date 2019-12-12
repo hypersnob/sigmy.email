@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "icons": "svgr --icon --replace-attr-values '#000=currentColor' -d ./src/icons/js ./src/icons/svg"
+    "icons": "svgr --replace-attr-values '#fff=currentColor' --icon -d ./src/icons/js ./src/icons/svg"
   },
   "eslintConfig": {
     "extends": "react-app"
