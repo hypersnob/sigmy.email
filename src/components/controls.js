@@ -5,6 +5,9 @@ import { GeneralForm } from './forms/general-form'
 import { TemplateForm } from './forms/template-form'
 import { SocialForm } from './forms/social-form'
 import cn from 'classnames'
+import ListIcon from '../icons/js/List'
+import PencilIcon from '../icons/js/Pencil'
+import ShareIcon from '../icons/js/Share'
 
 export default function Controls({template, signature, handleInputChange, chooseTemplate, reset}) {
 
@@ -22,7 +25,7 @@ export default function Controls({template, signature, handleInputChange, choose
             className={cn({ active: activeTab === 'template' })}
             onClick={() => { toggle('template'); }}
           >
-            T
+            <ListIcon />
           </NavLink>
         </NavItem>
         <NavItem>
@@ -30,7 +33,7 @@ export default function Controls({template, signature, handleInputChange, choose
             className={cn({ active: activeTab === 'general' })}
             onClick={() => { toggle('general'); }}
           >
-            G
+            <PencilIcon />
           </NavLink>
         </NavItem>
         <NavItem>
@@ -38,7 +41,7 @@ export default function Controls({template, signature, handleInputChange, choose
             className={cn({ active: activeTab === 'social' })}
             onClick={() => { toggle('social'); }}
           >
-            S
+            <ShareIcon />
           </NavLink>
         </NavItem>
         <SourceModal buttonLabel='Get source' signature={signature} template={template} />
@@ -60,7 +63,7 @@ export default function Controls({template, signature, handleInputChange, choose
             </TabPane>
           </TabContent>
           <div className='mt-auto'>
-            <Button onClick={reset} block>Reset all fields</Button>
+            <Button onClick={reset} className="text-muted" block>Reset all fields</Button>
           </div>
       </div>
     </aside>

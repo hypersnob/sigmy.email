@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgr/cli": "^4.3.3",
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
     "node-sass": "^4.13.0",
@@ -15,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "icons": "svgr --icon --replace-attr-values '#000=currentColor' -d ./src/icons/js ./src/icons/svg"
   },
   "eslintConfig": {
     "extends": "react-app"

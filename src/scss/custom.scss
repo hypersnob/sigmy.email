@@ -51,13 +51,15 @@ main, aside{ flex-direction: column;}
     .form-control {
       background: none;
       color: $light;
-      border-color: $gray-700;
+      border-color: $gray-800;
       &:focus {
         color: $white;
         border-color: $light;
       }
-      &-internal-autofill-selected {
-        background-color: inherit !important;
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $white !important;
+        -webkit-box-shadow: 0 0 0 30px $dark inset !important;
+        box-shadow: none;
       }
     }
   }
