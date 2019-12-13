@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useReducer} from 'react'
 import './scss/style.scss'
 import Controls from './components/controls'
 import Header from './components/header'
@@ -10,39 +10,35 @@ const storageKey = 'lsState';
 const initialState = {
   template: 'templateOne',
   signature: {},
+  social: {},
+}
+
+const stateReducer = (state, action) => {
+  switch (action.type) {
+    case 'social':
+    case 'signature':
+      state[action.type] = {
+        ...state[action.type],
+        [action.target.name]: action.target.value
+      };
+      return {...state}
+    case 'template':
+        if (state.template === action.template) return;
+        state.template = action.template;
+        return {...state}
+    case 'reset':
+      window.localStorage.clear()
+      return {...initialState}
+    default:
+      console.log('default')
+      return {...state}
+  }
 }
 
 function App() {
-  const [state, setState] = useState( getStateFromStorage(initialState, storageKey) || initialState );
-  const {template, signature} = state;
+  const [state, dispatch] = useReducer(stateReducer, getStateFromStorage(initialState, storageKey) || initialState );
+  const {template, signature, social} = state;
   
-  function handleInputChange(event) {
-    event.persist();
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    setState({
-      template,
-      signature: {
-        ...signature,
-        [name]: value
-      }
-    })
-  }
-
-  function chooseTemplate(event) {
-    const template = event.target.closest('.template-tmb').id;
-    if (state.template === template) return;
-    setState({
-      ...state,
-      template: template
-    })
-  }
-
-  function resetState() {
-    setState({...initialState})
-    window.localStorage.clear()
-  }
   
   const prevHandler = useRef(null)
   
@@ -63,11 +59,10 @@ function App() {
         />
       </main>
       <Controls
-        handleInputChange={handleInputChange}
         signature={signature}
+        social={social}
         template={template}
-        reset={resetState}
-        chooseTemplate={chooseTemplate}
+        dispatch={dispatch}
       />
     </>
   );

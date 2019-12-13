@@ -9,7 +9,7 @@ import TemplateIcon from '../icons/js/Template'
 import EditIcon from '../icons/js/Edit'
 import ShareIcon from '../icons/js/Share'
 
-export default function Controls({template, signature, handleInputChange, chooseTemplate, reset}) {
+export default function Controls({template, signature, social, dispatch}) {
 
   const [activeTab, setActiveTab] = useState('template');
 
@@ -49,21 +49,21 @@ export default function Controls({template, signature, handleInputChange, choose
       <div className='form-wrapper p-5 d-flex flex-column'>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='template'>
-              <TemplateForm template={template} chooseTemplate={chooseTemplate} />
+              <TemplateForm template={template} dispatch={dispatch} />
             </TabPane>
           </TabContent>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='general'>
-              <GeneralForm signature={signature} handleInputChange={handleInputChange} />
+              <GeneralForm signature={signature} dispatch={dispatch} />
             </TabPane>
           </TabContent>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='social'>
-              <SocialForm signature={signature} handleInputChange={handleInputChange} />
+              <SocialForm social={social} dispatch={dispatch} />
             </TabPane>
           </TabContent>
           <div className='mt-auto'>
-            <Button onClick={reset} className="text-muted" block>Reset all fields</Button>
+            <Button onClick={() => dispatch({type: 'reset'})} className="text-muted" block>Reset all fields</Button>
           </div>
       </div>
     </aside>

@@ -4,7 +4,7 @@ import cn from 'classnames'
 import template1 from '../../img/template-1.svg'
 import template2 from '../../img/template-2.svg'
 
-export function TemplateForm({chooseTemplate, template}) {
+export function TemplateForm({dispatch, template}) {
   const templates = [
     {
       title: 'Template 1',
@@ -29,6 +29,11 @@ export function TemplateForm({chooseTemplate, template}) {
 
   ]
 
+  function getTemplate(event) {
+    let template = event.target.closest('.template-tmb').id;
+    dispatch({type: 'template', template: template})
+  }
+
   const rows = templates.reduce(function(result, value, index, array) {
     if (index % 2 === 0) result.push(array.slice(index, index + 2));
     return result;
@@ -42,7 +47,7 @@ export function TemplateForm({chooseTemplate, template}) {
           {col.map(({title, image, current}, index) => (
             <Col md='6' className='mb-3' key={index}>
               <div className='mb-2'>{title}</div>
-              <div className={cn('template-tmb', {active: template === current})} id={current} onClick={chooseTemplate}>
+              <div className={cn('template-tmb', {active: template === current})} id={current} onClick={getTemplate}>
                 <img className='img-fluid' src={image} alt={title} />
               </div>
             </Col>
