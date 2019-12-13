@@ -30,15 +30,13 @@ const stateReducer = (state, action) => {
       window.localStorage.clear()
       return {...initialState}
     default:
-      console.log('default')
-      return {...state}
+      throw new Error();
   }
 }
 
 function App() {
   const [state, dispatch] = useReducer(stateReducer, getStateFromStorage(initialState, storageKey) || initialState );
   const {template, signature, social} = state;
-  
   
   const prevHandler = useRef(null)
   
