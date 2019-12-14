@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, FormGroup, Label, Input } from 'reactstrap'
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 import {getValue} from '../../utils/helpers'
 
 export function GeneralForm({dispatch, signature}) {
@@ -60,6 +60,9 @@ export function GeneralForm({dispatch, signature}) {
               value={getValue(signature[name])}
               placeholder={placeholder}
             />
+            {
+              name === 'logo' && <FormText>Upload an image to your Dropbox, Google Drive or a similar site and paste the URL here. The file size should not exceed 3 MB.</FormText>
+            }
           </FormGroup>
         ))}
       </Form>

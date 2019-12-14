@@ -106,3 +106,12 @@ input.form-control:-internal-autofill-selected {
   box-shadow: 0 0 0px 1000px $dark inset;
   transition: background-color 5000s ease-in-out 0s !important;
 }
+
+.btn {
+  &-social {
+    line-height: 1;
+    margin-right: .25rem;
+    margin-bottom: .25rem;
+    i {width: 1rem;}
+  }
+}
