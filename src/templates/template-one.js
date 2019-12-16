@@ -1,4 +1,4 @@
-export const templateOne = (signature) => (
+export const templateOne = (signature, social) => (
   `<div>
       <table cellpadding="0" cellspacing="0" role="presentation" width="550" class="wrapper">
       <tbody>
@@ -43,35 +43,42 @@ export const templateOne = (signature) => (
                           <td valign="top" style="font-size: 0px;">
                             <p
                               style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                              <span v-bind="[object Object]"
+                              <span
                                 style="padding-right: 0px; font-weight: 600; color: rgb(64, 158, 255);">Website:&nbsp;&nbsp;</span><a
-                                href="https://example.com"
-                                style="text-decoration: none; color: inherit;">https://example.com</a></p>
+                                href=${signature.website || ''}
+                                style="text-decoration: none; color: inherit;">${signature.website || ''}</a></p>
                           </td>
                         </tr>
                         <tr>
                           <td valign="top" style="font-size: 0px;">
                             <p
                               style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                              <span v-bind="[object Object]"
+                              <span
                                 style="padding-right: 0px; font-weight: 600; color: rgb(64, 158, 255);">Email:&nbsp;&nbsp;</span><a
-                                href="mailto:http://johndoe@example.com"
-                                style="text-decoration: none; color: inherit;">johndoe@example.com</a></p>
+                                href="mailto:${signature.email || ''}"
+                                style="text-decoration: none; color: inherit;">${signature.email || ''}</a></p>
                           </td>
                         </tr>
                         <tr>
                           <td valign="top" style="font-size: 0px;">
                             <p
                               style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                              <span v-bind="[object Object]"
-                                style="padding-right: 0px; font-weight: 600; color: rgb(64, 158, 255);">Phone:&nbsp;&nbsp;</span><span>+
-                                1 123 456 7890</span></p>
+                              <span
+                                style="padding-right: 0px; font-weight: 600; color: rgb(64, 158, 255);">Phone:&nbsp;&nbsp;</span>
+                                <span>${signature.phone || ''}</span></p>
                           </td>
                         </tr>
+                        ${social && '<tr><td width="24">'}
+                        ${social && Object.entries(social).map(([name,link]) => `
+                          <a href=${link} target="_blank">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-${name}.png" width="24" alt="${name} Icon">
+                          </a>`
+                        ).join("")}
+                        ${social && '</td></tr>'}
                       </tbody>
                     </table>
-                  </td>
-                </tr>
+                  </tr>
+                </td>
               </tbody>
             </table>
           </td>

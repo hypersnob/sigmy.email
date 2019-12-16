@@ -29,6 +29,9 @@ const stateReducer = (state, action) => {
     case 'reset':
       window.localStorage.clear()
       return {...initialState}
+    case 'delete':
+      if (state.social[action.name]) delete state.social[action.name];
+      return {...state}
     default:
       throw new Error();
   }
@@ -54,6 +57,7 @@ function App() {
         <Preview
           signature={signature}
           template={template}
+          social={social}
         />
       </main>
       <Controls

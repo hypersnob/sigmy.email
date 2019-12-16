@@ -1,7 +1,7 @@
 import React from 'react'
 import { getSource } from '../utils/get-source'
 
-export default function Preview({signature, template}) {
+export default function Preview({signature, template, social}) {
 
   return (
     <div className='pt-6 px-3'>
@@ -14,7 +14,7 @@ export default function Preview({signature, template}) {
           <div className='line w-75'/>
           <div className='line'/>
         </div>
-        <div dangerouslySetInnerHTML={{__html: getSource(signature, template)}} />
+        <div dangerouslySetInnerHTML={{__html: getSource(signature, template, social)}} />
       </div>
     </div>
   )

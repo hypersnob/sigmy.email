@@ -9,25 +9,25 @@ export function SocialForm({social, dispatch}) {
       label: 'Facebook',
       name: 'facebook',
       placeholder: 'https://facebook.com',
-      active: true,
+      active: false,
     },
     {
       label: 'LinkedIn',
       name: 'linkedin',
       placeholder: 'https://linkedin.com',
-      active: true,
+      active: false,
     },
     {
       label: 'Twitter',
       name: 'twitter',
       placeholder: 'https://twitter.com',
-      active: true,
+      active: false,
     },
     {
       label: 'Instagram',
       name: 'instagram',
       placeholder: 'https://instagram.com',
-      active: true,
+      active: false,
     },
     {
       label: 'Xing',
@@ -127,7 +127,14 @@ export function SocialForm({social, dispatch}) {
     },
   ]
 
-  const [channels, setChannels] = useState(fields);
+  function getInitial(fields, social) {
+    return fields.map((channel) => {
+      if(Object.keys(social).includes(channel.name)) channel.active = true;
+      return channel;
+    })
+  }
+
+  const [channels, setChannels] = useState(getInitial(fields, social));
 
   function toggleChannel (event) {
     let target = event.target.closest('button');
@@ -136,6 +143,7 @@ export function SocialForm({social, dispatch}) {
       return channel;
     })
     setChannels([...channels])
+    dispatch({type: 'delete', name: target.id})
   }
 
   return (

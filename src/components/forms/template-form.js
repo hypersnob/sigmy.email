@@ -16,17 +16,6 @@ export function TemplateForm({dispatch, template}) {
       image: template2,
       current: 'templateTwo'
     },
-    {
-      title: 'Template 2',
-      image: template1,
-      current: 'templateOne'
-    },
-    {
-      title: 'Template 3',
-      image: template2,
-      current: 'templateTwo'
-    },
-
   ]
 
   function getTemplate(event) {

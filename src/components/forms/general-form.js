@@ -30,6 +30,11 @@ export function GeneralForm({dispatch, signature}) {
       placeholder: 't.anderson@example.com'
     },
     {
+      label: 'Address',
+      name: 'address',
+      placeholder: 'Bla bla street'
+    },
+    {
       label: 'Phone',
       name: 'phone',
       placeholder: '1111 2222 3333'
