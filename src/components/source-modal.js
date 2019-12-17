@@ -21,13 +21,13 @@ const SourceModal = (props) => {
 
   return (
     <>
-      <button className='main-cta' onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</button>
+      <Button color='primary' className='text-uppercase' block onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
         <ModalBody>
           <FormGroup>
             <Label for='exampleText'>Text Area</Label>
-            <Input type='textarea' className='p-2' name='text' id='sourceArea' defaultValue={getSource(signature, template)} rows='10' />
+            <Input type='textarea' className='p-2' name='text' id='sourceArea' defaultValue={getSource(signature, template)} rows='6' />
           </FormGroup>  
         </ModalBody>
         <ModalFooter>

@@ -1,6 +1,12 @@
 import {templateOne} from '../templates/template-one'
 import {templateTwo} from '../templates/template-two'
 
+function minify( s ){
+  return s
+    .replace(/>[\r\n ]+</g, "><")
+    .replace(/(<.*?>)|\s+/g, (m, $1) => $1 ? $1 : ' ')
+    .trim()
+}
 
 export function getSource(signature, template, social) {
   const templates = {
@@ -20,7 +26,7 @@ export function getSource(signature, template, social) {
     website: 'www.example.com',
   }
   
-  let details = (Object.entries(signature).length === 0 && signature.constructor === Object) ? temp : signature;
+  let details = (Object.entries(signature).length === 0) ? temp : signature;
   
-  return templates[template](details, social).replace(/\s\s+/g, ' ');
+  return minify(templates[template](details, social));
 }

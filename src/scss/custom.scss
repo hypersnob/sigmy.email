@@ -17,9 +17,9 @@ main, aside{ flex-direction: column;}
   max-width: 42rem;
 }
 
-.brand {
-  font-size: 1.5rem;
-}
+// .brand {
+//   font-size: 1.5rem;
+// }
 
 .dummy {
   *+* {
@@ -28,19 +28,6 @@ main, aside{ flex-direction: column;}
   .line{
     height: 1rem;
     background-color: $light;
-  }
-}
-
-.main-cta {
-  flex-grow: 1;
-  text-transform: uppercase;
-  background-color: $primary;
-  border: none;
-  color: $light;
-  &:disabled {
-    color: $gray-500;
-    background-color: darken($primary, 15%);
-    cursor: not-allowed;
   }
 }
 
@@ -65,12 +52,13 @@ main, aside{ flex-direction: column;}
   &-tabs {
     background-color: $black;
     .nav-item {
+      flex-grow: 1;
+      text-align: center;
       border-left: 1px solid $dark;
-      &:not(.active){
-        cursor: pointer;
-      }
       .nav-link {
-        font-size: 1.5rem;
+        &:not(.active){
+          cursor: pointer;
+        }
         &:hover {
           background-color: $dark;
         }
