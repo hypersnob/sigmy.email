@@ -1,8 +1,9 @@
-import React, {useEffect, useRef, useReducer} from 'react'
+import React, {useState, useEffect, useRef, useReducer} from 'react'
 import './scss/style.scss'
 import Controls from './components/controls'
 import Header from './components/header'
 import Preview from './components/preview'
+import FinalToast from './components/final-toast'
 import {addHandler, removeHandler, getStateFromStorage, saveStateToStorage} from './utils/helpers'
 
 const storageKey = 'lsState';
@@ -38,9 +39,10 @@ const stateReducer = (state, action) => {
 }
 
 function App() {
+  // State control
   const [state, dispatch] = useReducer(stateReducer, getStateFromStorage(initialState, storageKey) || initialState );
   const {template, signature, social} = state;
-  
+
   const prevHandler = useRef(null)
   
   useEffect(() => {
@@ -49,6 +51,16 @@ function App() {
     prevHandler.current = handler
     addHandler(handler)
   }, [state]);
+  
+  // Toast control
+  const [toast, setToast] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const toggleToast = (text) => {
+    setToast(!toast)
+    setMessage(text)
+    setTimeout(() => setToast(false), 4000)
+  };
 
   return (
     <>
@@ -71,7 +83,9 @@ function App() {
         social={social}
         template={template}
         dispatch={dispatch}
+        toggleToast={toggleToast}
       />
+      <FinalToast toast={toast} toggleToast={toggleToast}>{message}</FinalToast>
     </>
   );
 }

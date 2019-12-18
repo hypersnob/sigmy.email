@@ -865,12 +865,12 @@ $nav-tabs-link-active-bg:           $dark;
 
 // // Toasts
 
-// $toast-max-width:                   350px;
-// $toast-padding-x:                   .75rem;
-// $toast-padding-y:                   .25rem;
-// $toast-font-size:                   .875rem;
-// $toast-color:                       null;
-// $toast-background-color:            rgba($white, .85);
+$toast-max-width:                   25rem;
+$toast-padding-x:                   1rem;
+$toast-padding-y:                   .5rem;
+$toast-font-size:                   1rem;
+$toast-color:                       $white;
+$toast-background-color:            rgba($success, .5);
 // $toast-border-width:                1px;
 // $toast-border-color:                rgba(0, 0, 0, .1);
 // $toast-border-radius:               .25rem;

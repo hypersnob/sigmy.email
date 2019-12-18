@@ -1,107 +1,122 @@
-#root, main, aside{
-  height: 100vh;
-  display: flex;
+#root,
+main,
+aside {
+    height: 100vh;
+    display: flex;
 }
 
-main, aside{ flex-direction: column;}
+main,
+aside {
+    flex-direction: column;
+}
 
 .control-wrapper {
-  flex: 0 0 28rem;
+    flex: 0 0 28rem;
 }
 
 .page-header {
-  background-color: $black;
+    background-color: $black;
 }
 
 .stage {
-  max-width: 42rem;
+    max-width: 42rem;
 }
 
 .brand {
-  font-size: 1.5rem;
-  padding: 1.5rem;
-  line-height: 1;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    line-height: 1;
 }
 
 .dummy {
-  *+* {
-    margin-top: .5rem;
-  }
-  .line{
-    height: 1rem;
-    background-color: $light;
-  }
+    *+* {
+        margin-top: .5rem;
+    }
+    .line {
+        height: 1rem;
+        background-color: $light;
+    }
 }
 
-.form{
-  &-wrapper {
-    position: relative;
-    overflow-y: scroll;
-    height: 100%;
-    label{
-      color: $gray-200;
-    }
-    .form-control {
-      background: none;
-      color: $light;
-      border-color: $gray-800;
-      &:focus {
-        color: $white;
-        border-color: $light;
-      }
-    }
-  }
-  &-tabs {
-    background-color: $black;
-    .nav-item {
-      flex-grow: 1;
-      text-align: center;
-      border-left: 1px solid $dark;
-      .nav-link {
-        &:not(.active){
-          cursor: pointer;
+.form {
+    &-wrapper {
+        position: relative;
+        overflow-y: scroll;
+        height: 100%;
+        label {
+            color: $gray-200;
         }
-        &:hover {
-          background-color: $dark;
+        .form-control {
+            background: none;
+            color: $light;
+            border-color: $gray-800;
+            &:focus {
+                color: $white;
+                border-color: $light;
+            }
         }
-      }
     }
-  }
+    &-tabs {
+        background-color: $black;
+        .nav-item {
+            flex-grow: 1;
+            text-align: center;
+            border-left: 1px solid $dark;
+            .nav-link {
+                &:not(.active) {
+                    cursor: pointer;
+                }
+                &:hover {
+                    background-color: $dark;
+                }
+            }
+        }
+    }
 }
 
 .template-tmb {
-  position: relative;
-  cursor: pointer;
-  &.active {
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background-color: rgba($primary, .25);
-      border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    &.active {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: rgba($primary, .25);
+            border-radius: 2px;
+        }
     }
-  }
 }
 
 input.form-control:-webkit-autofill,
-input.form-control:-webkit-autofill:hover, 
+input.form-control:-webkit-autofill:hover,
 input.form-control:-webkit-autofill:focus,
 input.form-control:-internal-autofill-selected {
-  -webkit-text-fill-color: $white !important;
-  -webkit-box-shadow: 0 0 0px 100px $dark inset !important;
-  box-shadow: 0 0 0px 1000px $dark inset;
-  transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-text-fill-color: $white !important;
+    -webkit-box-shadow: 0 0 0px 100px $dark inset !important;
+    box-shadow: 0 0 0px 1000px $dark inset;
+    transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .btn {
-  &-social {
-    line-height: 1;
-    margin-right: .25rem;
-    margin-bottom: .25rem;
-    i {width: 1rem;}
-  }
+    &-social {
+        line-height: 1;
+        margin-right: .25rem;
+        margin-bottom: .25rem;
+        i {
+            width: 1rem;
+        }
+    }
 }
+
+.toast {
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+}
+
+button:disabled {cursor: not-allowed;}

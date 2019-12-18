@@ -2,7 +2,6 @@ import React from 'react'
 import { getSource } from '../utils/get-source'
 
 export default function Preview({signature, template, social}) {
-
   return (
     <div className='pt-6 px-3'>
       <div className='stage mx-auto'>

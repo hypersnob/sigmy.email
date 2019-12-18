@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap'
-import { copyTextToClipboard} from '../utils/helpers'
+import { copyTextToClipboard, isReady} from '../utils/helpers'
 import { getSource } from '../utils/get-source'
-
-function isActive(obj) {
-  return Object.entries(obj).length < 6
-}
 
 const SourceModal = (props) => {
   const {
@@ -13,7 +9,8 @@ const SourceModal = (props) => {
     className,
     signature,
     template,
-    social
+    social,
+    toggleToast
   } = props;
 
   const [modal, setModal] = useState(false);
@@ -22,7 +19,7 @@ const SourceModal = (props) => {
 
   return (
     <>
-      <Button className='flex-grow-1' onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</Button>
+      <Button className='flex-grow-1' onClick={toggle} disabled={isReady(signature)}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
         <ModalBody className='py-0'>
@@ -33,7 +30,7 @@ const SourceModal = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button onClick={toggle}>Cancel</Button>
-          <Button color='primary' onClick={() => {copyTextToClipboard(getSource(signature, template, social)); toggle()}}>Copy</Button>
+          <Button color='primary' onClick={() => {copyTextToClipboard(getSource(signature, template, social), toggleToast); toggle()}}>Copy</Button>
         </ModalFooter>
       </Modal>
     </>

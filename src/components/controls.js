@@ -4,11 +4,11 @@ import SourceModal from './source-modal'
 import { GeneralForm } from './forms/general-form'
 import { TemplateForm } from './forms/template-form'
 import { SocialForm } from './forms/social-form'
-import { copyTextToClipboard} from '../utils/helpers'
+import { copyTextToClipboard, isReady} from '../utils/helpers'
 import { getSignature } from '../utils/get-signature'
 import cn from 'classnames'
 
-export default function Controls({template, signature, social, dispatch}) {
+export default function Controls({template, signature, social, dispatch, toggleToast}) {
 
   const [activeTab, setActiveTab] = useState('template');
 
@@ -61,9 +61,9 @@ export default function Controls({template, signature, social, dispatch}) {
           </TabPane>
         </TabContent>
         <div className='mt-auto'>
-          <ButtonGroup className='d-flex'>
-            <SourceModal buttonLabel='View source code' signature={signature} template={template} social={social} />
-            <Button color="primary" className='flex-grow-1' onClick={() => copyTextToClipboard(getSignature(signature))}>Copy signature</Button>
+          <ButtonGroup className='d-flex mb-2'>
+            <SourceModal buttonLabel='View source code' signature={signature} template={template} social={social} toggleToast={toggleToast} />
+            <Button color="primary" className='flex-grow-1' disabled={isReady(signature)} onClick={() => copyTextToClipboard(getSignature(signature), toggleToast)}>Copy signature</Button>
           </ButtonGroup>
           <Button onClick={() => dispatch({type: 'reset'})} className="text-muted" color='link' block>Reset all fields</Button>
         </div>

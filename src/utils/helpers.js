@@ -2,12 +2,12 @@ export function getValue(value = ''){
   return value;
 }
 
-export function copyTextToClipboard(text) {
+export function copyTextToClipboard(text, cb) {
   if (!navigator.clipboard) {
     console.log('unsuccessful')
   }
   navigator.clipboard.writeText(text).then(function() {
-    console.log('Async: Copying to clipboard was successful!');
+    cb('Your signature was created and copied!')
   }, function(err) {
     console.error('Async: Could not copy text: ', err);
   });
@@ -37,4 +37,8 @@ export function saveStateToStorage(state, key) {
     console.log('Could not access storage')
     return false;
   }
+}
+
+export function isReady(obj) {
+  return Object.entries(obj).length < 6
 }
