@@ -52,13 +52,19 @@ function App() {
 
   return (
     <>
-      <main className='flex-grow-1'>
+      <main className='flex-grow-1 d-flex flex-column'>
         <Header />
         <Preview
           signature={signature}
           template={template}
           social={social}
         />
+        <div className='small text-center py-3 text-muted mt-auto'>
+          <span>by</span>{' '}
+          <a href='https://github.com/hypersnob' target='_blank' rel="noopener noreferrer">hypersnob</a>
+          <i className='fab fa-github px-2' />
+          <a href='https://github.com/hypersnob/sigmy.email' target='_blank' rel="noopener noreferrer">source</a>
+        </div>
       </main>
       <Controls
         signature={signature}

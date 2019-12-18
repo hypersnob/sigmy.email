@@ -5,6 +5,11 @@ import {getValue} from '../../utils/helpers'
 export function GeneralForm({dispatch, signature}) {
   const fields = [
     {
+      label: 'Image',
+      name: 'logo',
+      placeholder: 'https://example.com/images/mypic.png'
+    },
+    {
       label: 'Full name',
       name: 'name',
       placeholder: 'Thomas Anderson'
@@ -20,12 +25,7 @@ export function GeneralForm({dispatch, signature}) {
       placeholder: 'Meta Cortex'
     },
     {
-      label: 'Company Logo',
-      name: 'logo',
-      placeholder: 'https://example.com/images/mypic.png'
-    },
-    {
-      label: 'Email address',
+      label: 'Email',
       name: 'email',
       placeholder: 't.anderson@example.com'
     },
@@ -37,11 +37,6 @@ export function GeneralForm({dispatch, signature}) {
     {
       label: 'Phone',
       name: 'phone',
-      placeholder: '1111 2222 3333'
-    },
-    {
-      label: 'Mobile',
-      name: 'mobile',
       placeholder: '1111 2222 3333'
     },
     {

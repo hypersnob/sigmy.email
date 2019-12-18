@@ -17,9 +17,11 @@ main, aside{ flex-direction: column;}
   max-width: 42rem;
 }
 
-// .brand {
-//   font-size: 1.5rem;
-// }
+.brand {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  line-height: 1;
+}
 
 .dummy {
   *+* {

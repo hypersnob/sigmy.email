@@ -1,27 +1,27 @@
 export const templateOne = (signature, social) => (
   `<div>
-      <table cellpadding="0" cellspacing="0" role="presentation" width="550" class="wrapper">
+      <table cellpadding="0" cellspacing="0" width="550">
       <tbody>
         <tr>
           <td>
-            <table cellpadding="0" cellspacing="0" role="presentation">
+            <table cellpadding="0" cellspacing="0">
               <tbody>
                 <tr>
                   <td valign="top">
-                    <table cellpadding="0" cellspacing="0" role="presentation">
+                    <table cellpadding="0" cellspacing="0">
                       <tbody>
                         <tr>
-                          <td style="padding-right: 10px;">
-                            <div
-                              style="width: 120px; height: 120px; border-radius: 0px; background-color: rgb(238, 238, 238);">
-                            </div>
+                          <td style="padding-right: 15px;">
+                            ${signature.logo ? `
+                              <img width="104" src=${signature.logo} border="0" alt="avatar" style="width: 104px; border-radius: 0px;">` : `<div style="width: 104px; height: 104px; border-radius: 0px; background-color: rgb(238, 238, 238);"></div>`
+                            }
                           </td>
                         </tr>
                       </tbody>
                     </table>
                   </td>
                   <td valign="top" width="100%">
-                    <table cellpadding="0" cellspacing="0" role="presentation">
+                    <table cellpadding="0" cellspacing="0">
                       <tbody>
                         <tr style="font-weight: 600;">
                           <td valign="top" style="font-size: 0px;">
@@ -68,13 +68,13 @@ export const templateOne = (signature, social) => (
                                 <span>${signature.phone || ''}</span></p>
                           </td>
                         </tr>
-                        ${social && '<tr><td width="24">'}
-                        ${social && Object.entries(social).map(([name,link]) => `
-                          <a href=${link} target="_blank">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-${name}.png" width="24" alt="${name} Icon">
-                          </a>`
+                        ${social && `<tr><td style="padding-top: 3px;"><table cellpadding="0" cellspacing="0" style="font-size: 0px"><tr>`}
+                        ${social && Object.entries(social).map(([name,link]) => `<td align="center" style="line-height: 1;">
+                          <a href=${link} target="_blank" style="display: inline-block; padding: 0px; border-radius: 3px;">
+                            <img src="https://sigmyemail.sirv.com/icons/social-${name}-white.png" width="24" height="24" alt=${name} style="vertical-align: middle; border-radius: 3px; background-color: rgb(64, 158, 255); display: block;" />
+                          </a></td><td width="2"></td>`
                         ).join("")}
-                        ${social && '</td></tr>'}
+                        ${social && `</tr></table></td></tr>`}
                       </tbody>
                     </table>
                   </tr>

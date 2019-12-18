@@ -24,8 +24,8 @@ const SourceModal = (props) => {
       <Button color='primary' className='text-uppercase' block onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
-        <ModalBody>
-          <FormGroup>
+        <ModalBody className='py-0'>
+          <FormGroup className='m-0'>
             <Label for='exampleText'>Text Area</Label>
             <Input type='textarea' className='p-2' name='text' id='sourceArea' defaultValue={getSource(signature, template)} rows='6' />
           </FormGroup>  
