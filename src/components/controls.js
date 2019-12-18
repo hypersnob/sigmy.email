@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
-import { Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
+import { Button, ButtonGroup, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 import SourceModal from './source-modal'
 import { GeneralForm } from './forms/general-form'
 import { TemplateForm } from './forms/template-form'
 import { SocialForm } from './forms/social-form'
+import { copyTextToClipboard} from '../utils/helpers'
+import { getSignature } from '../utils/get-signature'
 import cn from 'classnames'
 
 export default function Controls({template, signature, social, dispatch}) {
@@ -59,7 +61,10 @@ export default function Controls({template, signature, social, dispatch}) {
           </TabPane>
         </TabContent>
         <div className='mt-auto'>
-          <SourceModal buttonLabel='Get HTML' signature={signature} template={template} />
+          <ButtonGroup className='d-flex'>
+            <SourceModal buttonLabel='View source code' signature={signature} template={template} social={social} />
+            <Button color="primary" className='flex-grow-1' onClick={() => copyTextToClipboard(getSignature(signature))}>Copy signature</Button>
+          </ButtonGroup>
           <Button onClick={() => dispatch({type: 'reset'})} className="text-muted" color='link' block>Reset all fields</Button>
         </div>
       </div>

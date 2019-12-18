@@ -13,6 +13,7 @@ const SourceModal = (props) => {
     className,
     signature,
     template,
+    social
   } = props;
 
   const [modal, setModal] = useState(false);
@@ -21,7 +22,7 @@ const SourceModal = (props) => {
 
   return (
     <>
-      <Button color='primary' className='text-uppercase' block onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</Button>
+      <Button className='flex-grow-1' onClick={toggle} disabled={isActive(signature)}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} size='lg' >
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
         <ModalBody className='py-0'>
@@ -32,7 +33,7 @@ const SourceModal = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button onClick={toggle}>Cancel</Button>
-          <Button color='primary' onClick={() => {copyTextToClipboard(getSource(signature, template)); toggle()}}>Copy</Button>
+          <Button color='primary' onClick={() => {copyTextToClipboard(getSource(signature, template, social)); toggle()}}>Copy</Button>
         </ModalFooter>
       </Modal>
     </>

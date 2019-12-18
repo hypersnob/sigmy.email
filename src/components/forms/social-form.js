@@ -139,7 +139,7 @@ export function SocialForm({social, dispatch}) {
   function toggleChannel (event) {
     let target = event.target.closest('button');
     channels.map((channel) => {
-      if(target.id === channel.name) channel.active = !channel.active;
+      if(target.dataset.name === channel.name) channel.active = !channel.active;
       return channel;
     })
     setChannels([...channels])
@@ -152,7 +152,7 @@ export function SocialForm({social, dispatch}) {
       <Form>
         <div className='mb-4 ml-1'>
           {channels.map((channel, index) => (
-            <Button key={index} className={cn({active: channel.active}, 'p-2', 'btn-social')} color='light' outline id={channel.name} onClick={toggleChannel} >
+            <Button key={index} className={cn({active: channel.active}, 'p-2', 'btn-social')} color='light' outline data-name={channel.name} onClick={toggleChannel} >
               <i className={cn('fab', { [`fa-${channel.name}`]:true } )} /> 
             </Button>
           ))}
@@ -169,7 +169,7 @@ export function SocialForm({social, dispatch}) {
                 placeholder={channel.placeholder}
               />
               <InputGroupAddon addonType="append">
-                <Button color='gray-dark' outline id={channel.name} onClick={toggleChannel}>
+                <Button color='gray-dark' outline data-name={channel.name} onClick={toggleChannel}>
                   &times;
                 </Button>
               </InputGroupAddon>
