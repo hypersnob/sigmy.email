@@ -1,1 +1,1 @@
-Yet another free Email Signature Generator [sigmy.emaul](https://sigmy.email/).
+Yet another free Email Signature Generator [sigmy.email](https://sigmy.email/).
