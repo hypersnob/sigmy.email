@@ -24,8 +24,8 @@ const SourceModal = (props) => {
         <ModalHeader toggle={toggle}>Your email signature</ModalHeader>
         <ModalBody className='py-0'>
           <FormGroup className='m-0'>
-            <Label for='exampleText'>Text Area</Label>
-            <Input type='textarea' className='p-2' name='text' id='sourceArea' defaultValue={getSource(signature, template)} rows='6' />
+            <Label for='source'>Copy the HTML code and paste it to your signature file</Label>
+            <Input type='textarea' className='p-2' name='source' defaultValue={getSource(signature, template)} rows='6' />
           </FormGroup>  
         </ModalBody>
         <ModalFooter>

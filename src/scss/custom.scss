@@ -23,14 +23,18 @@ aside {
 }
 
 .brand {
-    font-size: 1.5rem;
-    padding: 1.5rem;
+    font-size: 2rem;
+    padding: 1.25rem;
     line-height: 1;
+    color: $primary;
+    svg {
+        display: block;
+    }
 }
 
 .dummy {
     *+* {
-        margin-top: .5rem;
+        margin-top: 0.5rem;
     }
     .line {
         height: 1rem;
@@ -79,14 +83,14 @@ aside {
     cursor: pointer;
     &.active {
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 1;
-            background-color: rgba($primary, .25);
+            background-color: rgba($primary, 0.25);
             border-radius: 2px;
         }
     }
@@ -105,8 +109,8 @@ input.form-control:-internal-autofill-selected {
 .btn {
     &-social {
         line-height: 1;
-        margin-right: .25rem;
-        margin-bottom: .25rem;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
         i {
             width: 1rem;
         }
@@ -119,4 +123,6 @@ input.form-control:-internal-autofill-selected {
     top: 2rem;
 }
 
-button:disabled {cursor: not-allowed;}
+button:disabled {
+    cursor: not-allowed;
+}
