@@ -3,7 +3,7 @@ import './scss/style.scss'
 import Controls from './components/controls'
 import Header from './components/header'
 import Preview from './components/preview'
-import FinalToast from './components/final-toast'
+import ActionAlert from './components/action-alert'
 import {addHandler, removeHandler, getStateFromStorage, saveStateToStorage} from './utils/helpers'
 
 const storageKey = 'lsState';
@@ -52,19 +52,21 @@ function App() {
     addHandler(handler)
   }, [state]);
   
-  // Toast control
-  const [toast, setToast] = useState(false);
-  const [message, setMessage] = useState('');
+  // Alert
+  const [alert, setAlert] = useState({isOpen: false, message: '', type: 'secondary'});
 
-  const toggleToast = (text) => {
-    setToast(!toast)
-    setMessage(text)
-    setTimeout(() => setToast(false), 4000)
-  };
+  const showAlert = (message, type) => {
+    setAlert({isOpen: true, message: message, type: type})
+  }
+  
+  useEffect(() => {
+    if (alert.isOpen) setTimeout(() => setAlert({...alert, isOpen: false}), 3000)
+  }, [alert])
 
   return (
     <>
       <main className='flex-grow-1 d-flex flex-column'>
+        <ActionAlert isOpen={alert.isOpen} message={alert.message} type={alert.type} />
         <Header />
         <Preview
           signature={signature}
@@ -72,10 +74,9 @@ function App() {
           social={social}
         />
         <div className='small text-center py-3 text-muted mt-auto'>
-          <span>by</span>{' '}
-          <a href='https://github.com/hypersnob' target='_blank' rel="noopener noreferrer">hypersnob</a>
+          <a className='text-muted' href='https://github.com/hypersnob' target='_blank' rel="noopener noreferrer">Hypersnob</a>
           <i className='fab fa-github px-2' />
-          <a href='https://github.com/hypersnob/sigmy.email' target='_blank' rel="noopener noreferrer">source</a>
+          <a className='text-muted' href='https://github.com/hypersnob/sigmy.email' target='_blank' rel="noopener noreferrer">Source</a>
         </div>
       </main>
       <Controls
@@ -83,9 +84,8 @@ function App() {
         social={social}
         template={template}
         dispatch={dispatch}
-        toggleToast={toggleToast}
+        showAlert={showAlert}
       />
-      <FinalToast toast={toast} toggleToast={toggleToast}>{message}</FinalToast>
     </>
   );
 }

@@ -2,9 +2,9 @@ export function getSignature(signature) {
 return `${signature.name || ''}
 ${signature.job || ''} | ${signature.company || ''}
 
-phone: ${signature.phone || ''}
-email: ${signature.email || ''}
+${signature.phone ? 'phone' : ''} ${signature.phone || ''}
+${signature.email ? 'email' : ''} ${signature.email || ''}
 
-website: ${signature.website || ''}
-address: ${signature.address || ''}`
+${signature.website ? 'website' : ''} ${signature.website || ''}
+${signature.address ? 'address' : ''} ${signature.address || ''}`
 }

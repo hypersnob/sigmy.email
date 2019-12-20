@@ -1,128 +1,133 @@
 #root,
 main,
 aside {
-    height: 100vh;
-    display: flex;
+  height: 100vh;
+  display: flex;
 }
 
 main,
 aside {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .control-wrapper {
-    flex: 0 0 28rem;
+  flex: 0 0 28rem;
 }
 
 .page-header {
-    background-color: $black;
+  background-color: $black;
 }
 
 .stage {
-    max-width: 42rem;
+  max-width: 42rem;
 }
 
 .brand {
-    font-size: 2rem;
-    padding: 1.25rem;
-    line-height: 1;
-    color: $primary;
-    svg {
-        display: block;
-    }
+  font-size: 2rem;
+  padding: 1.25rem;
+  line-height: 1;
+  color: $primary;
+  svg {
+    display: block;
+  }
 }
 
 .dummy {
-    *+* {
-        margin-top: 0.5rem;
-    }
-    .line {
-        height: 1rem;
-        background-color: $light;
-    }
+  * + * {
+    margin-top: 0.5rem;
+  }
+  .line {
+    height: 1rem;
+    background-color: $light;
+  }
 }
 
 .form {
-    &-wrapper {
-        position: relative;
-        overflow-y: scroll;
-        height: 100%;
-        label {
-            color: $gray-200;
-        }
-        .form-control {
-            background: none;
-            color: $light;
-            border-color: $gray-800;
-            &:focus {
-                color: $white;
-                border-color: $light;
-            }
-        }
+  &-wrapper {
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    label {
+      color: $gray-200;
     }
-    &-tabs {
-        background-color: $black;
-        .nav-item {
-            flex-grow: 1;
-            text-align: center;
-            border-left: 1px solid $dark;
-            .nav-link {
-                &:not(.active) {
-                    cursor: pointer;
-                }
-                &:hover {
-                    background-color: $dark;
-                }
-            }
-        }
+    .form-control {
+      background: none;
+      color: $light;
+      border-color: $gray-800;
+      &:focus {
+        color: $white;
+        border-color: $light;
+      }
     }
+  }
+  &-tabs {
+    background-color: $black;
+    .nav-item {
+      flex-grow: 1;
+      text-align: center;
+      border-left: 1px solid $dark;
+      .nav-link {
+        &:not(.active) {
+          cursor: pointer;
+        }
+        &:hover {
+          background-color: $dark;
+        }
+      }
+    }
+  }
 }
 
 .template-tmb {
-    position: relative;
-    cursor: pointer;
-    &.active {
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            background-color: rgba($primary, 0.25);
-            border-radius: 2px;
-        }
+  position: relative;
+  cursor: pointer;
+  &.active {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgba($primary, 0.25);
+      border-radius: 2px;
     }
+  }
 }
 
 input.form-control:-webkit-autofill,
 input.form-control:-webkit-autofill:hover,
 input.form-control:-webkit-autofill:focus,
 input.form-control:-internal-autofill-selected {
-    -webkit-text-fill-color: $white !important;
-    -webkit-box-shadow: 0 0 0px 100px $dark inset !important;
-    box-shadow: 0 0 0px 1000px $dark inset;
-    transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-text-fill-color: $white !important;
+  -webkit-box-shadow: 0 0 0px 100px $dark inset !important;
+  box-shadow: 0 0 0px 1000px $dark inset;
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .btn {
-    &-social {
-        line-height: 1;
-        margin-right: 0.25rem;
-        margin-bottom: 0.25rem;
-        i {
-            width: 1rem;
-        }
+  &-social {
+    line-height: 1;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    i {
+      width: 1rem;
     }
+  }
 }
 
-.toast {
-    position: fixed;
-    right: 2rem;
-    top: 2rem;
+.alert {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1500;
 }
 
 button:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
+}
+
+textarea {
+  font-size: 14px !important;
 }

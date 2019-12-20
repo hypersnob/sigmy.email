@@ -56,6 +56,7 @@ export function GeneralForm({dispatch, signature}) {
             <Input
               type='text'
               name={name}
+              id={name}
               onChange={(event) => dispatch({type: 'signature', target: event.target})}
               value={getValue(signature[name])}
               placeholder={placeholder}

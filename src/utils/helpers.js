@@ -4,11 +4,12 @@ export function getValue(value = ''){
 
 export function copyTextToClipboard(text, cb) {
   if (!navigator.clipboard) {
-    console.log('unsuccessful')
+    cb('Sorry, try it in desktop browser', 'danger')
   }
   navigator.clipboard.writeText(text).then(function() {
-    cb('Your signature was created and copied!')
+    cb('Your signature was seccessfuly copied!', 'success')
   }, function(err) {
+    cb('Something get wrong, sorry', 'danger')
     console.error('Async: Could not copy text: ', err);
   });
 }
