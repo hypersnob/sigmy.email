@@ -143,7 +143,7 @@ export function SocialForm({social, dispatch}) {
       return channel;
     })
     setChannels([...channels])
-    dispatch({type: 'delete', name: target.id})
+    dispatch({type: 'delete', name: target.dataset.name})
   }
 
   return (

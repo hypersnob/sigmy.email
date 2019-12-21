@@ -41,7 +41,7 @@ export const templateOne = (signature, social) => (
                           <td valign="top">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.email ? '<span style="font-weight: 600;">e&nbsp;&nbsp;</span>' : ''}
-                              <a href="mailto:${signature.email || ''}" style="text-decoration: none; color:#000000"><font color="#000000">${signature.email || ''}</font></a>
+                              <a href="mailto:${signature.email || ''}" style="text-decoration: none; color:#000000">${signature.email || ''}</a>
                             </p>
                           </td>
                         </tr>
