@@ -24,7 +24,7 @@ const stateReducer = (state, action) => {
       };
       return {...state}
     case 'template':
-        if (state.template === action.template) return;
+        if (state.template === action.template) return state;
         state.template = action.template;
         return {...state}
     case 'reset':

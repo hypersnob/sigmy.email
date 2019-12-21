@@ -82,6 +82,7 @@ aside {
   position: relative;
   cursor: pointer;
   &.active {
+    cursor: default;
     &:after {
       content: "";
       position: absolute;

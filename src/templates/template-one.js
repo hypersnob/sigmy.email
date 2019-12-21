@@ -22,14 +22,14 @@ export const templateOne = (signature, social) => (
                     <table cellpadding="0" cellspacing="0">
                       <tbody>
                         <tr style="font-weight: 600;">
-                          <td valign="top" style="font-size: 0px;">
+                          <td valign="top">
                             <p style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               <span>${signature.name || ''}</span>
                             </p>
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px; padding-bottom: 5px;">
+                          <td valign="top" style="padding-bottom: 5px;">
                             <p style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%;">
                               <span>${signature.job || ''}</span>
                               ${signature.company ? '<span>&nbsp|&nbsp;</span>' : ''}
@@ -38,30 +38,30 @@ export const templateOne = (signature, social) => (
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px;">
+                          <td valign="top">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.email ? '<span style="font-weight: 600;">e&nbsp;&nbsp;</span>' : ''}
-                              <a href="mailto:${signature.email || ''}" style="text-decoration: none; color: inherit;">${signature.email || ''}</a>
+                              <a href="mailto:${signature.email || ''}" style="text-decoration: none; color:#000000"><font color="#000000">${signature.email || ''}</font></a>
                             </p>
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px;">
+                          <td valign="top">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.phone ? '<span style="font-weight: 600;">p&nbsp;&nbsp;</span>' : ''}
                               <span>${signature.phone || ''}</span></p>
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px;">
+                          <td valign="top">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.website ? '<span style="font-weight: 600;">w&nbsp;&nbsp;</span>' : ''}
-                              <a href=${signature.website || ''} style="text-decoration: none; color: inherit;">${signature.website || ''}</a>
+                              <a href=${signature.website || ''} style="text-decoration: none; color:#000000">${signature.website || ''}</a>
                             </p>
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px; padding-bottom: 6px;">
+                          <td valign="top" style="padding-bottom: 6px;">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.address ? '<span style="font-weight: 600;">a&nbsp;&nbsp;</span>' : ''}
                               <span>${signature.address || ''}</span></p>
@@ -75,7 +75,7 @@ export const templateOne = (signature, social) => (
                         ).join("")}
                         ${social && `</tr></table></td></tr>`}
                         <tr>
-                          <td valign="center" style="font-size: 0px; padding-bottom: 10px;">
+                          <td valign="center" style="padding-bottom: 10px;">
                             <table cellpadding="0" cellspacing="0">
                               <tbody>
                                 <tr>
@@ -85,7 +85,7 @@ export const templateOne = (signature, social) => (
                                   <td width="10"></td>
                                   <td>
                                     <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                                      <a style="text-decoration: none; color: inherit;" href=${signature.linkUrl || ''}>
+                                      <a style="text-decoration: none; color: #000000;" href=${signature.linkUrl || ''}>
                                         <span style="font-weight: 600;">${signature.linkText || ''}</span>
                                       </a>
                                     </p>
@@ -96,7 +96,7 @@ export const templateOne = (signature, social) => (
                           </td>
                         </tr>
                         <tr>
-                          <td valign="top" style="font-size: 0px;">
+                          <td valign="top">
                             <p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 120%; display: block; color: #999999;">
                               ${signature.disclaimer || ''}
                             </p>
