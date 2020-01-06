@@ -106,7 +106,7 @@ export const templateTwo = (signature, social) => (
                       </td>
                     </tr>
                     <tr height="25" style="vertical-align: top;">
-                      <td style="padding: 0px;">
+                      <td style="padding-bottom: 10px;">
                         <span
                           color="#3f3f3d"
                           style="font-size: 12px; color: rgb(63, 63, 61);"
@@ -179,7 +179,7 @@ export const templateTwo = (signature, social) => (
             </tr>
             <tr>
               <td valign="top" style="font-size: 0px;">
-                <p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 120%; display: block; color: #999966;">
+                <p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 120%; display: block; color: #999999;">
                   ${signature.disclaimer || ''}
                 </p>
               </td>

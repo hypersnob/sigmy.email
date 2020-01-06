@@ -12,7 +12,7 @@ export function GeneralForm({dispatch, signature}) {
     {
       label: 'Full name',
       name: 'name',
-      placeholder: 'Thomas Anderson'
+      placeholder: 'Joan Doe'
     },
     {
       label: 'Job title',
@@ -22,27 +22,27 @@ export function GeneralForm({dispatch, signature}) {
     {
       label: 'Company',
       name: 'company',
-      placeholder: 'Meta Cortex'
+      placeholder: 'MyCompany'
     },
     {
       label: 'Email',
       name: 'email',
-      placeholder: 't.anderson@example.com'
+      placeholder: 'name@example.com'
     },
     {
       label: 'Address',
       name: 'address',
-      placeholder: 'Bla bla street'
+      placeholder: '1317 Sunset Drive, Bearden'
     },
     {
       label: 'Phone',
       name: 'phone',
-      placeholder: '1111 2222 3333'
+      placeholder: '012 3456 7890'
     },
     {
       label: 'Website',
       name: 'website',
-      placeholder: 'http://www.example.com'
+      placeholder: 'https://www.example.com'
     },
   ]
 
