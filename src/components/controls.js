@@ -4,7 +4,7 @@ import SourceModal from './source-modal'
 import { GeneralForm } from './forms/general-form'
 import { TemplateForm } from './forms/template-form'
 import { SocialForm } from './forms/social-form'
-import { AddonsForm } from './forms/addons-form'
+// import { AddonsForm } from './forms/addons-form'
 import { copyTextToClipboard, isReady} from '../utils/helpers'
 import { getSignature } from '../utils/get-signature'
 import cn from 'classnames'
@@ -44,14 +44,14 @@ export default function Controls({template, signature, social, dispatch, showAle
             Social
           </NavLink>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <NavLink
             className={cn({ active: activeTab === 'addons' })}
             onClick={() => { toggle('addons'); }}
           >
             Addons
           </NavLink>
-        </NavItem>
+        </NavItem> */}
       </Nav>
       <div className='form-wrapper px-5 pt-5 pb-2 d-flex flex-column'>
         <TabContent activeTab={activeTab}>
@@ -69,11 +69,11 @@ export default function Controls({template, signature, social, dispatch, showAle
             <SocialForm social={social} dispatch={dispatch} />
           </TabPane>
         </TabContent>
-        <TabContent activeTab={activeTab}>
+        {/* <TabContent activeTab={activeTab}>
           <TabPane tabId='addons'>
             <AddonsForm signature={signature} dispatch={dispatch} />
           </TabPane>
-        </TabContent>
+        </TabContent> */}
         <div className='mt-auto'>
           <ButtonGroup className='d-flex mb-2'>
             <SourceModal buttonLabel='View source code' signature={signature} template={template} social={social} showAlert={showAlert} />
