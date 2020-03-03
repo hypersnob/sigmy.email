@@ -1,8 +1,26 @@
 #root,
 main,
 aside {
-  height: 100vh;
-  display: flex;
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+    display: flex;
+  }
+}
+
+.blocker {
+  z-index: 1400;
+  &-box{
+    padding-bottom: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &-info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 main,
@@ -11,7 +29,9 @@ aside {
 }
 
 .control-wrapper {
-  flex: 0 0 28rem;
+  @include media-breakpoint-up(md) {
+    flex: 0 0 28rem;
+  }
 }
 
 .page-header {

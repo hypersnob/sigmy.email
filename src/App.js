@@ -5,6 +5,7 @@ import Header from './components/header'
 import Preview from './components/preview'
 import ActionAlert from './components/action-alert'
 import {addHandler, removeHandler, getStateFromStorage, saveStateToStorage} from './utils/helpers'
+import Logo from './icons/js/Logo'
 
 const storageKey = 'lsState';
 
@@ -65,6 +66,16 @@ function App() {
 
   return (
     <>
+      <div className='blocker position-fixed d-lg-none bg-dark w-100 h-100 p-3 p-md-5'>
+        <div className='blocker-box w-100'>
+          <div className='blocker-info w-100 bg-light d-flex flex-column justify-content-center rounded-circle text-center p-4'>
+            <div className="display-1 text-primary mb-2 mb-md-4">
+              <Logo />
+            </div>
+            <span className='lead'>Sorry, this app is optimized for desktop. </span>
+          </div>
+        </div>
+      </div>
       <main className='flex-grow-1 d-flex flex-column'>
         <ActionAlert isOpen={alert.isOpen} message={alert.message} type={alert.type} />
         <Header />

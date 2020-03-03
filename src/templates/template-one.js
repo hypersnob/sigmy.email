@@ -1,6 +1,7 @@
 export const templateOne = (signature, social) => (
   `<div>
-      <table cellpadding="0" cellspacing="0" width="550">
+    <br />
+    <table cellpadding="0" cellspacing="0" width="550">
       <tbody>
         <tr>
           <td>
@@ -12,7 +13,7 @@ export const templateOne = (signature, social) => (
                       <tbody>
                         <tr>
                           <td style="padding-right: 15px;">
-                            <img width="96" src=${signature.logo || 'https://sigmyemail.sirv.com/img/logo.png'} border="0" alt="avatar"">
+                            <img width="96" src="${signature.logo || 'https://sigmyemail.sirv.com/img/logo.png'}" border="0" alt="logo">
                           </td>
                         </tr>
                       </tbody>
@@ -30,7 +31,7 @@ export const templateOne = (signature, social) => (
                         </tr>
                         <tr>
                           <td valign="top" style="padding-bottom: 5px;">
-                            <p style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%;">
+                            <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%;">
                               <span>${signature.job || ''}</span>
                               ${signature.company ? '<span>&nbsp|&nbsp;</span>' : ''}
                               <span>${signature.company || ''}</span>
@@ -56,7 +57,7 @@ export const templateOne = (signature, social) => (
                           <td valign="top">
                             <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
                               ${signature.website ? '<span style="font-weight: 600;">w&nbsp;&nbsp;</span>' : ''}
-                              <a href=${signature.website || ''} style="text-decoration: none; color:#000000">${signature.website || ''}</a>
+                              <a href="${signature.website || ''}" style="text-decoration: none; color:#000000">${signature.website ? signature.website.replace(/(^\w+:|^)\/\//, '') : ''}</a>
                             </p>
                           </td>
                         </tr>
@@ -68,47 +69,18 @@ export const templateOne = (signature, social) => (
                           </td>
                         </tr>
                         ${social && `<tr><td style="padding-bottom: 12px;"><table cellpadding="0" cellspacing="0" style="font-size: 0px"><tr>`}
-                        ${social && Object.entries(social).map(([name,link]) => `<td align="center" style="line-height: 1;">
-                          <a href=${link} target="_blank" style="display: inline-block; padding: 0px; border-radius: 3px;">
-                            <img src="https://sigmyemail.sirv.com/icons/social-${name}-round.png" width="24" height="24" alt=${name} style="vertical-align: top; background-color: rgb(139, 138, 127);" /></a></td>
-                            <td width="5"></td>`
-                        ).join("")}
-                        ${social && `</tr></table></td></tr>`}
-                        <tr>
-                          <td valign="center" style="padding-bottom: 10px;">
-                            <table cellpadding="0" cellspacing="0">
-                              <tbody>
-                                <tr>
-                                  <td>
-                                    <img width="24" src=${signature.linkImage || 'https://sigmyemail.sirv.com/img/logo.png'} border="0" alt="link"">
-                                  </td>
-                                  <td width="10"></td>
-                                  <td>
-                                    <p style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 150%; display: block;">
-                                      <a style="text-decoration: none; color: #000000;" href=${signature.linkUrl || ''}>
-                                        <span style="font-weight: 600;">${signature.linkText || ''}</span>
-                                      </a>
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td valign="top">
-                            <p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0px; line-height: 120%; display: block; color: #999999;">
-                              ${signature.disclaimer || ''}
-                            </p>
-                          </td>
-                        </tr>
+                          ${social && Object.entries(social).map(([name,link]) => `<td align="center" style="line-height: 1;">
+                            <a href="${link}" target="_blank" style="display: inline-block; padding: 0px; border-radius: 3px;">
+                              <img src="https://sigmyemail.sirv.com/icons/social-${name}-round.png" width="24" height="24" alt=${name} style="vertical-align: top; background-color: rgb(139, 138, 127);" /></a></td>
+                              <td width="5"></td>`
+                          ).join('')}
+                          ${social && `</tr></table></td></tr>`}
                       </tbody>
                     </table>
-                  </tr>
-                </td>
-              </tbody>
-            </table>
-          </td>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
         </tr>
       </tbody>
     </table>

@@ -3,6 +3,8 @@ import { Row, Col } from 'reactstrap'
 import cn from 'classnames'
 import template1 from '../../img/template-1.svg'
 import template2 from '../../img/template-2.svg'
+import template3 from '../../img/template-3.svg'
+import template4 from '../../img/template-4.svg'
 
 export function TemplateForm({dispatch, template}) {
   const templates = [
@@ -16,6 +18,17 @@ export function TemplateForm({dispatch, template}) {
       image: template2,
       current: 'templateTwo'
     },
+    {
+      title: 'Template 3',
+      image: template3,
+      current: 'templateThree'
+    },
+    {
+      title: 'Template 4',
+      image: template4,
+      current: 'templateFour'
+    },
+
   ]
 
   function getTemplate(event) {

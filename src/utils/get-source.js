@@ -1,5 +1,7 @@
 import {templateOne} from '../templates/template-one'
 import {templateTwo} from '../templates/template-two'
+import {templateThree} from '../templates/template-three'
+import {templateFour} from '../templates/template-four'
 
 function minify( s ){
   return s
@@ -11,7 +13,9 @@ function minify( s ){
 export function getSource(signature, template, social) {
   const templates = {
     templateOne,
-    templateTwo
+    templateTwo,
+    templateThree,
+    templateFour
   }
 
   const tempSig = {
@@ -21,7 +25,7 @@ export function getSource(signature, template, social) {
     address: '1796 Snider Street, Pueblo',
     email: 'p.zaragamba@example.com',
     phone: '012 3456 7890',
-    website: 'www.example.com',
+    website: 'http://www.example.com',
     linkText: 'Check free email signature generator',
     linkUrl: 'https://sigmy.email/',
     disclaimer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
